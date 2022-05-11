@@ -1,7 +1,10 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { AppNavigation } from "./src/navigation/AppNavigation";
+import { initFirebase } from "./src/utils";
+import { LogBox } from "react-native";
+
+//eliminar las alertas de logs en la pantalla de la app
+LogBox.ignoreAllLogs();
 
 export default function App() {
   return (
@@ -12,12 +15,3 @@ export default function App() {
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

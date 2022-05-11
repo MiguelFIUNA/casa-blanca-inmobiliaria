@@ -11,7 +11,7 @@ export function MapStack() {
       <Stack.Screen
         name={screen.map.map}
         component={MapScreen}
-        options={{ title: "Mapa" }}
+        options={{ title: "Mapa", headerTitleAlign: "center" }}
       />
     </Stack.Navigator>
   );

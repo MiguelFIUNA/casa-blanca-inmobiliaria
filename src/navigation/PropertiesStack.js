@@ -11,7 +11,7 @@ export function PropertiesStack() {
       <Stack.Screen
         name={screen.properties.properties}
         component={PropertiesScreen}
-        options={{ title: "Propiedades" }}
+        options={{ title: "Propiedades", headerTitleAlign: "center" }}
       />
     </Stack.Navigator>
   );

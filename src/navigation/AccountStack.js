@@ -1,17 +1,17 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { screen } from "../utils";
-import { AccountScreen } from "../screens/Account";
+import { AccountScreen } from "../screens/";
 
 const Stack = createNativeStackNavigator();
 
-export function HomeStack() {
+export function AccountStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
         name={screen.account.account}
         component={AccountScreen}
-        options={{ title: "Mi cuenta", headerTitleAlign: "center" }}
+        options={{ title: "Iniciar Sesión", headerTitleAlign: "center" }}
       />
     </Stack.Navigator>
   );
