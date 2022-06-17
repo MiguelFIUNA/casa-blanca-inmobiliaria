@@ -5,9 +5,11 @@ export const styles = StyleSheet.create({
     alignContent: "center",
     justifyContent: "center",
     backgroundColor: "#fff",
+    paddingBottom: 30,
   },
   image: {
     resizeMode: "contain",
+    marginTop: 10,
     width: "100%",
     height: "40%",
   },

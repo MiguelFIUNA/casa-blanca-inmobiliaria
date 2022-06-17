@@ -14,7 +14,7 @@ export function AppNavigation() {
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarActiveTintColor: "#00abb5",
-        tabBarInactiveTintColor: "#c1c1c1",
+        tabBarInactiveTintColor: "#000",
         tabBarShowLabel: false,
         tabBarIcon: ({ color, size }) =>
           screenOptionsFunction(route, color, size),

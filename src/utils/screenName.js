@@ -8,7 +8,8 @@ const mapStack = {
 };
 const propertiesStack = {
   tab: "PropertiesTab",
-  properties: "properties",
+  properties: "Properties",
+  addProperties: "AddProperties",
 };
 const accountStack = {
   tab: "AccountTab",

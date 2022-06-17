@@ -4,16 +4,33 @@ import { Input, Icon, Button } from "react-native-elements";
 import { useFormik } from "formik";
 import { initialValues, validationSchema } from "./LoginForm.data";
 import { styles } from "./LoginForm.styles";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigation } from "@react-navigation/native";
+import { screen } from "../../../utils";
+//import Toast from "react-native-toast-message";
+import { async } from "@firebase/util";
 
 export function LoginForm() {
+  const navigation = useNavigation();
   const [showPassword, setShowPassword] = useState(false);
   const onShowHidePass = () => setShowPassword((prevState) => !prevState);
   const formik = useFormik({
     initialValues: initialValues(),
     validationSchema: validationSchema(),
     validateOnChange: false,
-    onSubmit: (formValue) => {
-      console.log(formValue);
+    onSubmit: async (formValue) => {
+      //console.log(formValue);
+      try {
+        const auth = getAuth();
+        await signInWithEmailAndPassword(
+          auth,
+          formValue.email,
+          formValue.password
+        );
+        navigation.goBack();
+      } catch (error) {
+        console.log("error de singIN");
+      }
     },
   });
 

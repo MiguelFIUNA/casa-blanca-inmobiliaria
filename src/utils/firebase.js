@@ -1,13 +1,18 @@
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import Constants from "expo-constants";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBwY7mXX5l9gKZIa04b2qR50X_8M7EYf-Y",
-  authDomain: "casablanca-native.firebaseapp.com",
-  projectId: "casablanca-native",
-  storageBucket: "casablanca-native.appspot.com",
-  messagingSenderId: "126928875359",
-  appId: "1:126928875359:web:c6f477251041f09b4b90ea",
+  apiKey: Constants.manifest.extra.apiKey,
+  authDomain: Constants.manifest.extra.authDomain,
+  projectId: Constants.manifest.extra.projectId,
+  storageBucket: Constants.manifest.extra.storageBucket,
+  messagingSenderId: Constants.manifest.extra.messagingSenderId,
+  appId: Constants.manifest.extra.appId,
 };
 
 // Initialize Firebase
 export const initFirebase = initializeApp(firebaseConfig);
+export const database = getFirestore();
+export const auth = getAuth();
